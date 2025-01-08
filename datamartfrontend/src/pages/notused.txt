@@ -1,0 +1,61 @@
+const CustomDropdown = ({ value, onChange, options }: { value: string; onChange: (value: string) => void; options: { value: string; label: string }[] }) => {
+        const [isOpen, setIsOpen] = useState(false)
+
+        return (
+            <div className="relative w-64 group">
+                <button
+                    onClick={() => setIsOpen(!isOpen)}
+                    className="flex justify-between outline-none w-full px-4 py-2 text-left p-2 bg-neutral-100 dark:bg-neutral-800 rounded-full items-center h-full text-neutral-600 dark:text-neutral-300 hover:text-primary dark:hover:text-primary transition-colors focus:outline-none "
+                >
+                    <span>{options.find(option => option.value === value)?.label || 'Select...'}</span>
+                    <ChevronDown className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" />
+                </button>
+                <div className="absolute top-full right-0 sm:right-auto sm:left-0 w-64 bg-white dark:bg-neutral-900 shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-0 group-hover:translate-y-2 z-50">
+                    <div className="absolute -top-2 right-6 sm:right-auto sm:left-6 w-4 h-4 bg-white dark:bg-neutral-900 transform rotate-45"/>
+                    <div className="relative bg-white dark:bg-neutral-900 rounded-lg pt-2 pb-2">
+                        {options.map((option) => (
+                            <button
+                                key={option.value}
+                                onClick={() => {
+                                    onChange(option.value)
+                                    setIsOpen(false)
+                                }}
+                                className="outline-none block w-full text-left px-4 py-2 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors duration-200"
+                            >
+                                {option.label}
+                            </button>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        )
+    }
+
+
+
+    interface StoreProps {
+        initialProducts?: Product[]
+    }
+
+    const CategoryTable = () => (
+        <div className="overflow-x-auto">
+            <table className="min-w-full bg-white dark:bg-neutral-800 rounded-lg overflow-hidden">
+                <thead className="bg-neutral-100 dark:bg-neutral-700">
+                <tr>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-neutral-500 dark:text-neutral-300 uppercase tracking-wider">ID</th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-neutral-500 dark:text-neutral-300 uppercase tracking-wider">Name</th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-neutral-500 dark:text-neutral-300 uppercase tracking-wider">Count</th>
+                </tr>
+                </thead>
+                <tbody className="divide-y divide-neutral-200 dark:divide-neutral-600">
+                {categories.map((category) => (
+                    <tr key={category.id}>
+                        <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-900 dark:text-neutral-100">{category.id}</td>
+                        <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-900 dark:text-neutral-100">{category.name}</td>
+                        <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-900 dark:text-neutral-100">{category.count}</td>
+                    </tr>
+                ))}
+                </tbody>
+            </table>
+        </div>
+    )

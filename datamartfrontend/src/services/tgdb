@@ -1,0 +1,19 @@
+<Modal
+                            isOpen={isModalOpen}
+                            onClose={handleModalClose}
+                            title={modalConfig.title}
+                            message={modalConfig.message}
+                            icon={<AlertTriangle className="size-6 text-rose-600" />}
+                            primaryButton={{
+                                label: 'Confirm',
+                                onClick: modalConfig.onConfirm,
+                                variant: 'danger'
+                            }}
+                            secondaryButton={{
+                                label: 'Cancel',
+                                onClick: handleModalClose,
+                                variant: 'secondary'
+                            }}
+                        />
+
+                         <Toast message={toastMessage} show={showToast} type={toastType}/>

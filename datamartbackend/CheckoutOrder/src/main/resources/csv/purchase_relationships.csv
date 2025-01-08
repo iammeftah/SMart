@@ -1,0 +1,6 @@
+_id,_class,purchasedWithProductIds,purchasedWithProductNames,totalTimesRelated
+ObjectId(65a7c1f9b3d4a2c1f8e4d004),wav.hmed.checkoutorder.model.purchase.PurchaseRelationship,"[""65a7c1f9b3d4a2c1f8e4d012"",""65a7c1f9b3d4a2c1f8e4d006""]","[""Smart Door Lock"",""Wireless Earbuds Pro""]",1
+ObjectId(65a7c1f9b3d4a2c1f8e4d006),wav.hmed.checkoutorder.model.purchase.PurchaseRelationship,"[""65a7c1f9b3d4a2c1f8e4d004"",""65a7c1f9b3d4a2c1f8e4d012""]","[""Smart Door Lock"",""Professional Gaming Mouse""]",1
+ObjectId(65a7c1f9b3d4a2c1f8e4d012),wav.hmed.checkoutorder.model.purchase.PurchaseRelationship,"[""65a7c1f9b3d4a2c1f8e4d004"",""65a7c1f9b3d4a2c1f8e4d006""]","[""Wireless Earbuds Pro"",""Professional Gaming Mouse""]",1
+ObjectId(65a7c1f9b3d4a2c1f8e4d002),wav.hmed.checkoutorder.model.purchase.PurchaseRelationship,"[""65a7c1f9b3d4a2c1f8e4d008""]","[""Smart Robot Vacuum""]",1
+ObjectId(65a7c1f9b3d4a2c1f8e4d008),wav.hmed.checkoutorder.model.purchase.PurchaseRelationship,"[""65a7c1f9b3d4a2c1f8e4d002""]","[""Premium Smart Watch""]",1
